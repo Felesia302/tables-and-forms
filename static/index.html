@@ -3,13 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <title>Форма выбора питомца</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <main>
     <h1>Найди себе друга!</h1>
 
-    <!--Форму размещай тут-->
+    <form method="POST" action="http://localhost:3000/pets/orders">
+
+        <div>
+            <label>Кличка питомца:
+                <input type="text" name="name" value="Барсик" required>
+            </label>
+        </div>
+
+        <div>
+            <label>Дата рождения:
+                <input type="date" name="dateOfBirth" value="2024-01-01" required>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                Тип питомца:
+                <select name="petType">
+                    <option value="dog">Собака</option>
+                    <option value="cat" selected>Кошка</option>
+                    <option value="reptile">Рептилия</option>
+                </select>
+            </label>
+        </div>
+
+        <div>
+            <fieldset style="display: inline-block;">
+                <legend>Пол питомца:</legend>
+                <label><input type="radio" name="gender" value="boy" checked> Самец</label>
+                <label><input type="radio" name="gender" value="girl"> Самка</label>
+                <label><input type="radio" name="gender" value="none"> Другое</label>
+            </fieldset>
+        </div>
+
+        <div>
+            <label>
+                Цвет глаз:
+                <input type="color" name="eyeColor" value="#8b4513">
+            </label>
+        </div>
+
+        <div>
+            <label>Длина хвоста в см:
+                <input type="number" name="tailLength" value="15" required>
+            </label>
+        </div>
+
+        <div>
+            <label>Ваш Email:
+                <input type="email" name="email" value="test@mail.ru" required>
+            </label>
+        </div>
+
+        <div>
+            <label>Ваш Телефон:
+                <input type="tel" name="phone" value="+79991234567" required>
+            </label>
+        </div>
+
+        <div>
+            <label>
+                <input type="checkbox" name="rules" value="true" checked>
+                Я согласен с правилами
+            </label>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <button type="submit">Отправить заказ</button>
+        </div>
+    </form>
 
 </main>
 </body>
